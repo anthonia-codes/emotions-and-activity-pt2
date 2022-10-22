@@ -1,38 +1,63 @@
 let random_number = 0
 input.onButtonPressed(Button.A, function () {
-    random_number = randint(1, 6)
-    music.startMelody(music.builtInMelody(Melodies.Entertainer), MelodyOptions.ForeverInBackground)
     if (random_number == 1) {
-        basic.showString("MICROBIT SAYS: Touch your hair")
+        basic.showString("MICROBIT SAYS Touch your hair")
+        basic.pause(2000)
     } else if (random_number == 2) {
-        basic.showString("MICROBIT SAYS: Cover your eyes")
+        basic.showString("MICROBIT SAYS")
+        basic.showIcon(IconNames.Sad)
+        basic.pause(2000)
     } else if (random_number == 3) {
-        basic.showString("MICROBIT SAYS: Jump 3x")
+        basic.showString("MICROBIT SAYS JUMP")
+        basic.pause(2000)
     } else if (random_number == 4) {
-        basic.showString("MICROBIT SAYS: Wave")
+        basic.showString("MICROBIT SAYS WAVE")
+        basic.pause(2000)
     } else if (random_number == 5) {
-        basic.showString("MICROBIT SAYS: Dab")
+        basic.showString("MICROBIT SAYS Dab")
+        basic.showString("" + (images.createBigImage(`
+            # # . # # # . # # #
+            # . # # . # . # . #
+            # . # # # # . # # #
+            # . # # . # . # . #
+            # # . # . # . # # #
+            `)))
+        basic.pause(2000)
     } else {
-        basic.showString("MICROBIT SAYS: Dance")
+        basic.showString("MICROBIT SAYS DANCE")
+        basic.pause(2000)
     }
+    random_number = randint(1, 6)
 })
 input.onButtonPressed(Button.B, function () {
-    random_number = randint(1, 6)
-    music.startMelody(music.builtInMelody(Melodies.Blues), MelodyOptions.ForeverInBackground)
     if (random_number == 1) {
-        basic.showString("Sit Down")
+        basic.showString("" + (images.createBigImage(`
+            # # . # # # . # # #
+            # . . . # . . . # .
+            # # . . # . . . # .
+            . # . . # . . . # .
+            # # . # # # . . # .
+            `)))
+        basic.pause(2000)
     } else if (random_number == 2) {
-        basic.showString("Type your favourite movie in the chat")
+        basic.showString("FAV MOVIE")
+        basic.pause(2000)
     } else if (random_number == 3) {
-        basic.showString("Shrug your shoulders")
+        basic.showString("SHRUG")
+        basic.pause(2000)
     } else if (random_number == 4) {
         basic.showString("Name a job in STEM")
+        basic.pause(2000)
     } else if (random_number == 5) {
-        basic.showString("Give yourself a high five")
+        basic.showString("HIGH FIVE")
+        basic.pause(2000)
     } else {
-        basic.showString("Snap 5x")
+        basic.showString("SNAP 5x")
+        basic.pause(2000)
     }
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    basic.showIcon(IconNames.No)
     basic.showString("INCORRECT")
+    basic.pause(2000)
 })
